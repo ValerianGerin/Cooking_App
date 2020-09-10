@@ -1,0 +1,14 @@
+.input{
+  margin-right: 8%;
+  width: 250px;
+  height: 30px;
+  font-size: 0.70em;
+  transition: ease-in-out, width .35s ease-in-out;
+
+}
+
+.input:focus{
+  width: 600px;
+  font-weight: bold;
+  
+}
