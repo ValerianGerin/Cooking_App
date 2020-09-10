@@ -1,4 +1,5 @@
 require("./config/database/db.connect");
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const routing = require("./routes");

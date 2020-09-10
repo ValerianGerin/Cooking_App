@@ -1,4 +1,3 @@
-const recipes = require("../models/recipe.model");
 const recipe = require("../models/recipe.model");
 
 //Query to recover all recipes
@@ -8,12 +7,11 @@ exports.findAllRecipes = () => {
 
 /**
  * Query to recover one recipe by id
- * @param {*} id 
+ * @param {*} id
  */
 exports.findOneRecipeById = (id) => {
   return recipe.findById(id).exec();
 };
-
 
 /**
  * Query to create one recipe
@@ -33,12 +31,10 @@ exports.createNewRecipe = (body) => {
   return newRecipe.save();
 };
 
-
 /**
  * Query to delete one recipe
- * @param {*} id 
+ * @param {*} id
  */
 exports.deleteRecipe = (id) => {
-
   return recipe.deleteOne({ _id: id }).exec();
 };

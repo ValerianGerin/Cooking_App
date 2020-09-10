@@ -1,5 +1,10 @@
 const router = require("express").Router();
-const {findAllRecipes, findOneRecipe,createRecipe, deleteOneRecipe } = require("../controllers/recipes.controller");
+const {
+  findAllRecipes,
+  findOneRecipe,
+  createRecipe,
+  deleteOneRecipe,
+} = require("../controllers/recipes.controller");
 
 router.get("/", findAllRecipes); //Router for all recipes
 router.get("/:id", findOneRecipe); //Router for one recipe
