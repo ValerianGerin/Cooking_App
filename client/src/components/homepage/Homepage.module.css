@@ -1,0 +1,53 @@
+.homepageMainContainer {
+  height: 100%;
+  background-color: blanchedalmond;
+}
+
+
+.imgSlider{
+  width: 1600px;
+  max-height: 400px;
+  margin: 1%;
+  margin-left: 100px;
+  border: 2px outset black;
+  padding: 5px;
+  background-color: white;
+}
+
+.sliderContainer {
+  display: flex;
+  position: absolute;
+  top: 490px;
+  left: 135px;
+}
+
+.sliders {
+  width: 15px;
+  height: 15px;
+  border: black 1px solid;
+  background-color: white;
+  border-radius: 50% 50%;
+  margin: 10px;
+}
+
+
+.homeMessage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepageImgContainer{
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.homepageImg{
+  width: 300px;
+  height: 300px;
+}
+
