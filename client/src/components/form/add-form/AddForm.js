@@ -11,7 +11,7 @@ const AddForm = () => {
   const initialFormStateIngredient = [{ name: "", quantite: "" }];
 
   const [form, setForm] = useState(initialFormState);
-  const [inputIngredient, setIngredients] = useState(
+  const [ingredient, setIngredients] = useState(
     initialFormStateIngredient
   );
 
@@ -30,8 +30,8 @@ const AddForm = () => {
           <input type="text" name="title" onChange={handleChange} />
         </div>
 
-        {inputIngredient
-          ? inputIngredient.map((input, index) => (
+        {ingredient
+          ? ingredient.map((input, index) => (
               <div className={Style.ingredientContainer}>
                 <div className={Style.ingredientName}>
                   <label>Ingredients:</label>
@@ -50,17 +50,12 @@ const AddForm = () => {
                   />
                   <div>-</div>
                 </div>
+                {ingredient.length !== 0}
               </div>
           ))
           : null}
 
-        <div
-          id="newIngredient"
-          className={Style.addNewIngredientText}
-        >
-          <div>+</div>
-          <div>Ajouter un ingredient</div>
-        </div>
+       
 
         <div className={Style.formItems}>
           <label>Image</label>
