@@ -1,0 +1,120 @@
+.formMainContainer {
+  height: 100%;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: blanchedalmond;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addNewIngredientText {
+  display: flex;
+
+
+}
+
+.addNewIngredientText {
+  cursor: pointer;
+}
+
+
+
+.form {
+  margin: 50px;
+  background-color: white;
+  width: 30%;
+  box-shadow: 10px 10px 10px;
+  border: outset;
+  border-radius: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.formItems {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+
+.ingredientContainer{
+  display: flex;
+  justify-content: space-around;
+}
+
+.ingredientName{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.ingredientQuantityContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.ingredientQuantityContainer>input{
+   width: 20px;
+}
+
+.ingredientQuantityContainer>div:nth-child(1){
+ 
+  background-color: rgb(219, 218, 218);
+  border-radius: 20px 20px 0px 0px;
+  width: 27px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.ingredientQuantityContainer>div:nth-child(1):hover{
+  cursor: pointer;
+}
+
+.ingredientQuantityContainer>div:nth-child(3){
+ 
+  background-color: rgb(219, 218, 218);
+  border-radius: 0px 0px 20px 20px;
+  width: 27px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.ingredientQuantityContainer>div:nth-child(3):hover{
+  cursor: pointer;
+}
+
+
+
+.buttonContainer {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+ 
+}
+
+.button {
+
+  background-color: white;
+  border: outset 3px;
+  border-radius: 20px 20px;
+  width: 50%;
+  margin: 10px;
+  min-width: 150px;
+  height: 40px;
+  font-weight: bold;
+}
+
+.button:hover{
+  cursor: pointer;
+}
