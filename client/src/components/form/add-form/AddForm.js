@@ -10,16 +10,18 @@ const AddForm = () => {
   };
   const initialFormStateIngredient = [{ name: "", quantite: "" }];
 
+  //State for every input except ingredients
   const [form, setForm] = useState(initialFormState);
-  const [ingredient, setIngredients] = useState(
-    initialFormStateIngredient
-  );
+  //State for Ingredients
+  const [ingredient, setIngredients] = useState(initialFormStateIngredient);
 
+  //Recover every field except ingredients
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
+  //Recover fields for ingredients
   const handleIngredientInputChange = (e, index) => {
     const { name, value } = e.target;
     const list = [...ingredient];
@@ -27,16 +29,17 @@ const AddForm = () => {
     setIngredients(list);
   };
 
-  const handleRemoveClick = index => {
+  //Remove ingredient from the array
+  const handleRemoveClick = (index) => {
     const list = [...ingredient];
     list.splice(index, 1);
     setIngredients(list);
   };
 
+  //Add ingredient in array
   const handleAddClick = () => {
     setIngredients([...ingredient, { name: "", quantite: "" }]);
   };
-
 
   return (
     <div className={Style.formMainContainer}>
@@ -55,7 +58,7 @@ const AddForm = () => {
                     type="text"
                     name="name"
                     value={input.name}
-                    onChange={e=>handleIngredientInputChange(e, index)}
+                    onChange={(e) => handleIngredientInputChange(e, index)}
                   />
                 </div>
                 <div className={Style.ingredientQuantityContainer}>
@@ -64,22 +67,27 @@ const AddForm = () => {
                     type="text"
                     name="quantite"
                     value={input.quantite}
-                    onChange={e=>handleIngredientInputChange(e, index)}
+                    onChange={(e) => handleIngredientInputChange(e, index)}
                   />
                   <div>-</div>
                 </div>
-                {ingredient.length !== 1 && <button onClick={()=>handleRemoveClick(index)}>Supprimer</button>}
-                {ingredient.length - 1 === index && <button onClick={handleAddClick}>Ajouter</button>}
+                {ingredient.length !== 1 && (
+                  <button onClick={() => handleRemoveClick(index)}>
+                    Supprimer
+                  </button>
+                )}
+                {ingredient.length - 1 === index && (
+                  <button onClick={handleAddClick}>Ajouter</button>
+                )}
               </div>
-          ))
+            ))
           : null}
-
-       
 
         <div className={Style.formItems}>
           <label>Image</label>
           <input type="file" name="img" onChange={handleChange} />
         </div>
+
         <div className={Style.formItems}>
           <label>Description:</label>
           <textarea
@@ -89,6 +97,7 @@ const AddForm = () => {
             onChange={handleChange}
           ></textarea>
         </div>
+
         <div className={Style.formItems}>
           <label>Conseil de preparation:</label>
           <textarea
@@ -98,6 +107,7 @@ const AddForm = () => {
             onChange={handleChange}
           ></textarea>
         </div>
+
         <div className={Style.buttonContainer}>
           <button className={Style.button}>Valider</button>
           <button className={Style.button}>Reinitialiser</button>
