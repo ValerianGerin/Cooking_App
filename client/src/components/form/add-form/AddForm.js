@@ -20,6 +20,22 @@ const AddForm = () => {
     setForm({ ...form, [name]: value });
   };
 
+  const handleIngredientInputChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...ingredient];
+    list[index][name] = value;
+    setIngredients(list);
+  };
+
+  const handleRemoveClick = index => {
+    const list = [...ingredient];
+    list.splice(index, 1);
+    setIngredients(list);
+  };
+
+  const handleAddClick = () => {
+    setIngredients([...ingredient, { name: "", quantite: "" }]);
+  };
 
 
   return (
@@ -39,6 +55,7 @@ const AddForm = () => {
                     type="text"
                     name="name"
                     value={input.name}
+                    onChange={e=>handleIngredientInputChange(e, index)}
                   />
                 </div>
                 <div className={Style.ingredientQuantityContainer}>
@@ -47,10 +64,12 @@ const AddForm = () => {
                     type="text"
                     name="quantite"
                     value={input.quantite}
+                    onChange={e=>handleIngredientInputChange(e, index)}
                   />
                   <div>-</div>
                 </div>
-                {ingredient.length !== 0}
+                {ingredient.length !== 1 && <button onClick={()=>handleRemoveClick(index)}>Supprimer</button>}
+                {ingredient.length - 1 === index && <button onClick={handleAddClick}>Ajouter</button>}
               </div>
           ))
           : null}
