@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Style from "./AddForm.module.css";
+import path from "../../../assets/config/path";
 
 const AddForm = () => {
   const initialFormState = {
@@ -42,9 +43,20 @@ const AddForm = () => {
     setIngredients([...ingredient, { name: "", quantite: "" }]);
   };
 
+  //Melting states to send the data corresponding to the mongoose schema
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const recipeData = { ...form, ingredients: [...ingredient] };
+    fetch(`${path}recipes/new`, {
+      method: "POST",
+      body: JSON.stringify(recipeData),
+      headers: { "Content-type": "application/json" },
+    });
+  };
+
   return (
     <div className={Style.formMainContainer}>
-      <form autoComplete="on" className={Style.form}>
+      <form autoComplete="on" className={Style.form} onSubmit={handleSubmit}>
         <div className={Style.formItems}>
           <label>Nom de la recette:</label>
           <input type="text" name="title" onChange={handleChange} />
@@ -60,7 +72,6 @@ const AddForm = () => {
                       id={index}
                       type="text"
                       name="name"
-                      value={input.name}
                       onChange={(e) => handleIngredientInputChange(e, index)}
                     />
                   </div>
@@ -99,7 +110,7 @@ const AddForm = () => {
           : null}
 
         <div className={Style.formItems}>
-          <label>Image</label>
+          <label>Image:</label>
           <input type="file" name="img" onChange={handleChange} />
         </div>
 
