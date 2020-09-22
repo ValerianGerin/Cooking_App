@@ -7,8 +7,8 @@ const app = express();
 
 app.use((req, res, next) => {
   res.set({
-    "Access-Control-Allow-Headers": "X-Requested-With,content-type",
-    "Access-Control-Allow-Origin": "http://localhost:3001",
+    "Access-Control-Allow-Headers": "*",
+    "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
   });
   next();

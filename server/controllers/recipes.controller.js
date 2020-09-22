@@ -25,6 +25,7 @@ exports.findOneRecipe = async (req, res) => {
 };
 
 exports.createRecipe = async (req, res) => {
+
   try {
     const body = req.body;
     const newRecipe = await createNewRecipe(body);

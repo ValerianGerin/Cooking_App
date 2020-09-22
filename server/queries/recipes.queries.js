@@ -19,16 +19,24 @@ exports.findOneRecipeById = (id) => {
  * @param {*} body
  */
 exports.createNewRecipe = (body) => {
-  const newRecipe = new recipe();
+  console.log(body)
+  try {
+    const newRecipe = new recipe();
 
-  newRecipe._id = null;
-  newRecipe.title = body.title;
-  newRecipe.img = body.img;
-  body.ingredient.map((ingredient) => newRecipe.ingredients.push(ingredient));
-  newRecipe.description = body.description;
-  newRecipe.preparation = body.preparation;
+    newRecipe._id = null;
+    newRecipe.title = body.title;
+    newRecipe.img = body.img;
+    body.ingredients.map((ingredient) => newRecipe.ingredients.push(ingredient));
+    newRecipe.description = body.description;
+    newRecipe.preparation = body.preparation;
+    return newRecipe.save();
 
-  return newRecipe.save();
+  } catch (error) {
+    throw error
+
+  }
+
+  
 };
 
 /**
