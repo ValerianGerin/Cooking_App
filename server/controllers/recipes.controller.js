@@ -3,6 +3,7 @@ const {
   findOneRecipeById,
   createNewRecipe,
   deleteRecipe,
+  searchBarQuery
 } = require("../queries/recipes.queries");
 
 exports.findAllRecipes = async (req, res) => {
@@ -46,3 +47,16 @@ exports.deleteOneRecipe = async (req, res) => {
     throw error;
   }
 };
+
+
+exports.search = async (req, res)=>{
+  try {
+    const query = req.query.recipes
+    const recipesResult = await searchBarQuery(query)
+    console.log(recipesResult)
+    res.send(recipesResult)
+  } catch (error) {
+    throw error
+  }
+  
+}

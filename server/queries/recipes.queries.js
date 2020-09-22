@@ -46,3 +46,8 @@ exports.createNewRecipe = (body) => {
 exports.deleteRecipe = (id) => {
   return recipe.deleteOne({ _id: id }).exec();
 };
+
+
+exports.searchBarQuery = (queryParam)=>{
+  return recipe.find({title: new RegExp(queryParam,"i")}).exec()
+}
