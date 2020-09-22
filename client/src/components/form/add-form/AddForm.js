@@ -12,6 +12,7 @@ const AddForm = () => {
 
   //State for every input except ingredients
   const [form, setForm] = useState(initialFormState);
+
   //State for Ingredients
   const [ingredient, setIngredients] = useState(initialFormStateIngredient);
 
@@ -51,34 +52,48 @@ const AddForm = () => {
 
         {ingredient
           ? ingredient.map((input, index) => (
-              <div className={Style.ingredientContainer}>
-                <div className={Style.ingredientName}>
-                  <label>Ingredients:</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={input.name}
-                    onChange={(e) => handleIngredientInputChange(e, index)}
-                  />
+              <div div key={index} className={Style.ingredientContainer}>
+                <div>
+                  <div className={Style.ingredientName}>
+                    <label>Ingredients:</label>
+                    <input
+                      id={index}
+                      type="text"
+                      name="name"
+                      value={input.name}
+                      onChange={(e) => handleIngredientInputChange(e, index)}
+                    />
+                  </div>
+
+                  <div className={Style.ingredientQuantityContainer}>
+                    <label>Quantité:</label>
+                    <input
+                      type="number"
+                      name="quantite"
+                      value={input.quantite}
+                      onChange={(e) => handleIngredientInputChange(e, index)}
+                    />
+                  </div>
+
+                  {ingredient.length !== 1 && (
+                    <button
+                      onClick={() => handleRemoveClick(index)}
+                      className={Style.buttonIngredient}
+                    >
+                      Supprimer
+                    </button>
+                  )}
                 </div>
-                <div className={Style.ingredientQuantityContainer}>
-                  <div>+</div>
-                  <input
-                    type="text"
-                    name="quantite"
-                    value={input.quantite}
-                    onChange={(e) => handleIngredientInputChange(e, index)}
-                  />
-                  <div>-</div>
+                <div>
+                  {ingredient.length - 1 === index && (
+                    <button
+                      onClick={handleAddClick}
+                      className={Style.buttonIngredient}
+                    >
+                      Ajouter
+                    </button>
+                  )}
                 </div>
-                {ingredient.length !== 1 && (
-                  <button onClick={() => handleRemoveClick(index)}>
-                    Supprimer
-                  </button>
-                )}
-                {ingredient.length - 1 === index && (
-                  <button onClick={handleAddClick}>Ajouter</button>
-                )}
               </div>
             ))
           : null}
@@ -109,8 +124,8 @@ const AddForm = () => {
         </div>
 
         <div className={Style.buttonContainer}>
-          <button className={Style.button}>Valider</button>
-          <button className={Style.button}>Reinitialiser</button>
+          <button className={Style.buttonForm}>Valider</button>
+          <button className={Style.buttonForm}>Reinitialiser</button>
         </div>
       </form>
     </div>
