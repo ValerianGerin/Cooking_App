@@ -9,8 +9,8 @@ const RecipeList = () => {
 
   useEffect(() => {
     const fetchRecipeList = async () => {
-      const recipes = await fetch(`${path}recipes`);
-      const response = await recipes.json();
+      const data = await fetch(`${path}recipes`);
+      const response = await data.json();
       setRecipeList(response);
     };
     fetchRecipeList();
