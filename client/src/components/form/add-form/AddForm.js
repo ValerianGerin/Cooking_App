@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import Style from "./AddForm.module.css";
 import path from "../../../assets/config/path";
 
@@ -16,6 +17,9 @@ const AddForm = () => {
 
   //State for Ingredients
   const [ingredient, setIngredients] = useState(initialFormStateIngredient);
+
+  //Initial statement for redirection after the submit
+  const isRedirect = false;
 
   //Recover every field except ingredients
   const handleChange = (e) => {
@@ -45,13 +49,21 @@ const AddForm = () => {
 
   //Melting states to send the data corresponding to the mongoose schema
   const handleSubmit = (e) => {
-    e.preventDefault();
     const recipeData = { ...form, ingredients: [...ingredient] };
-    fetch(`${path}recipes/new`, {
-      method: "POST",
-      body: JSON.stringify(recipeData),
-      headers: { "Content-type": "application/json" },
-    });
+
+    try {
+      fetch(`${path}recipes/new`, {
+        method: "POST",
+        body: JSON.stringify(recipeData),
+        headers: { "Content-type": "application/json" },
+      });
+   
+
+    } catch (error) {
+      if (error) {
+        e.preventDefault();
+      }
+    }
   };
 
   return (
@@ -59,7 +71,12 @@ const AddForm = () => {
       <form autoComplete="on" className={Style.form} onSubmit={handleSubmit}>
         <div className={Style.formItems}>
           <label>Nom de la recette:</label>
-          <input type="text" name="title" onChange={handleChange} />
+          <input
+            type="text"
+            name="title"
+            onChange={handleChange}
+            className={Style.input}
+          />
         </div>
 
         {ingredient
@@ -69,10 +86,10 @@ const AddForm = () => {
                   <div className={Style.ingredientName}>
                     <label>Ingredients:</label>
                     <input
-                      id={index}
                       type="text"
                       name="name"
                       onChange={(e) => handleIngredientInputChange(e, index)}
+                      className={Style.input}
                     />
                   </div>
 
@@ -83,6 +100,7 @@ const AddForm = () => {
                       name="quantite"
                       value={input.quantite}
                       onChange={(e) => handleIngredientInputChange(e, index)}
+                      className={Style.input}
                     />
                   </div>
 
@@ -121,6 +139,7 @@ const AddForm = () => {
             cols="35"
             name="desciption"
             onChange={handleChange}
+            className={Style.textarea}
           ></textarea>
         </div>
 
@@ -131,6 +150,7 @@ const AddForm = () => {
             cols="35"
             name="preparation"
             onChange={handleChange}
+            className={Style.textarea}
           ></textarea>
         </div>
 
