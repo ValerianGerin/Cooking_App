@@ -7,7 +7,7 @@ const AddForm = () => {
   const initialFormState = {
     title: "",
     img: "",
-    desciption: "",
+    description: "",
     preparation: "",
   };
   const initialFormStateIngredient = [{ name: "", quantite: "" }];
@@ -137,7 +137,7 @@ const AddForm = () => {
           <textarea
             rows="5"
             cols="35"
-            name="desciption"
+            name="description"
             maxLength="75"
             onChange={handleChange}
             className={Style.textarea}
