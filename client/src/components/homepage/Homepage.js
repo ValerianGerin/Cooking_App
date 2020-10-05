@@ -27,11 +27,8 @@ const Homepage = () => {
   };
 
   return (
-    
-
     <div className={Style.homepageMainContainer}>
-
-        {/*Slider img and buttons */}
+      {/*Slider img and buttons */}
       <div>
         <img
           className={Style.imgSlider}
@@ -64,32 +61,36 @@ const Homepage = () => {
         </p>
       </div>
 
-       {/*articles*/}
-       <div className={Style.homepageArticlesContainer}>
+      {/*articles*/}
+      <div className={Style.homepageArticlesContainer}>
         <div className={Style.articleContainer}>
           <img
             src={`${path}image/homepageImg1.jpg`}
             className={Style.articleImg}
           />
-          <p>Les legumes</p>
+          <div>
+            <p>Les legumes</p>
+          </div>
         </div>
         <div className={Style.articleContainer}>
           <img
             src={`${path}image/homepageImg2.jpeg`}
             className={Style.articleImg}
           />
-          <p>les poissons</p>
+          <div>
+            <p>les poissons</p>
+          </div>
         </div>
         <div className={Style.articleContainer}>
           <img
             src={`${path}image/homepageImg3.jpg`}
             className={Style.articleImg}
           />
-          <p>les soupes</p>
+          <div>
+            <p>les soupes</p>
+          </div>
         </div>
       </div>
-
-     
     </div>
   );
 };
