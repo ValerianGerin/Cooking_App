@@ -5,6 +5,7 @@ import Style from "./RecipeList.module.css";
 
 const RecipeList = () => {
   const [recipeList, setRecipeList] = useState();
+  const [reload, setReload] = useState(false)
 
   useEffect(() => {
     const fetchRecipeList = async () => {
@@ -13,20 +14,20 @@ const RecipeList = () => {
       setRecipeList(response);
     };
     fetchRecipeList();
-  }, []);
+  }, [reload]);
 
   const deleteRecipe = (id) =>{
     fetch(`${path}recipes/delete/${id}`, {method:"delete"})
+    setReload(!reload)
+ 
   }
 
-  console.log(recipeList)
- 
 
   return (
     <div className={Style.recipesMainContainer}>
       {recipeList && recipeList.length > 0
         ? recipeList.map((recipe, index) => (
-            <div key={index} className={Style.recipeContainer}>
+            <Link to={`recipes/${recipe._id}`} key={index} className={Style.recipeContainer}>
               <div className={Style.recipeInfos}>
                 <div>
                   <img src={recipe.img} alt={recipe.title}/>
@@ -41,7 +42,7 @@ const RecipeList = () => {
                 <button onClick={()=>deleteRecipe(recipe._id)} className={Style.button}>Supprimer</button>
                 <button className={Style.button}>Modifier</button>
               </div>
-            </div>
+            </Link>
         ))
         : <div className={Style.norecipe}>Pas de recettes, ajouter en au moins une pour consulter la liste</div>}
     </div>
