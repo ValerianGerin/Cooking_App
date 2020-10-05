@@ -138,6 +138,7 @@ const AddForm = () => {
             rows="5"
             cols="35"
             name="desciption"
+            maxLength="75"
             onChange={handleChange}
             className={Style.textarea}
           ></textarea>

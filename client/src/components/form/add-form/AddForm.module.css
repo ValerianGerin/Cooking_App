@@ -45,7 +45,13 @@
   padding: 10px;
   font-weight: 800;
   font-size: 1em;
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 120px;
+  min-height: 85px;
 }
+
+
 
 .ingredientContainer {
   width: 40%;
@@ -76,7 +82,7 @@
 
 .buttonContainer {
   height: 100%;
-  width: 50%;
+  width: 70%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -84,12 +90,12 @@
 
 .buttonForm {
   background-color: white;
-  border: outset 3px;
+  border: outset 4px;
   border-radius: 20px 20px;
   width: 50%;
   margin: 10px;
   min-width: 150px;
-  height: 40px;
+  height: 45px;
 }
 
 .buttonForm:hover {
