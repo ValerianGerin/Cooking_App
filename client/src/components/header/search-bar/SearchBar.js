@@ -18,7 +18,23 @@ const SearchBar = () => {
     fetchRecipes();
   };
 
-  return <input className={Style.input} onChange={handleSeach} />;
+  const inputSearch = document.querySelector("input[name=searchBar]");
+
+  return (
+    <div className={Style.inputContainer}>
+      <input name="searchBar" className={Style.input} onChange={handleSeach} />
+      {search && inputSearch.value !== "" && search.length > 0? (
+        <div className={Style.searchContainer}>
+          {search.map((recipe) => (
+            <div className={Style.searchItemsContainer}>
+              <img src={recipe.img} />
+              <div>{recipe.title}</div>
+            </div>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
 };
 
 export default SearchBar;
