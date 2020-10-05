@@ -18,6 +18,8 @@ const RecipeList = () => {
   const deleteRecipe = (id) =>{
     fetch(`${path}recipes/delete/${id}`, {method:"delete"})
   }
+
+  console.log(recipeList)
  
 
   return (
