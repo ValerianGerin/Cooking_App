@@ -27,7 +27,7 @@ const SearchBar = () => {
         <div className={Style.searchContainer}>
           {search.map((recipe) => (
             <div className={Style.searchItemsContainer}>
-              <img src={recipe.img} />
+              <img src={recipe.img} alt={recipe.title}/>
               <div>{recipe.title}</div>
             </div>
           ))}

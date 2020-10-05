@@ -27,7 +27,7 @@ const RecipeList = () => {
             <div key={index} className={Style.recipeContainer}>
               <div className={Style.recipeInfos}>
                 <div>
-                  <img src={recipe.img}/>
+                  <img src={recipe.img} alt={recipe.title}/>
                 </div>
                 <div className={Style.recipeText}>
                   <p>{recipe.title}</p>

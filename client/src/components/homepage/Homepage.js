@@ -67,6 +67,8 @@ const Homepage = () => {
           <img
             src={`${path}image/homepageImg1.jpg`}
             className={Style.articleImg}
+            alt="article legumes"
+            
           />
           <div>
             <p>Les legumes</p>
@@ -76,6 +78,7 @@ const Homepage = () => {
           <img
             src={`${path}image/homepageImg2.jpeg`}
             className={Style.articleImg}
+            alt="article poissons"
           />
           <div>
             <p>les poissons</p>
@@ -85,6 +88,7 @@ const Homepage = () => {
           <img
             src={`${path}image/homepageImg3.jpg`}
             className={Style.articleImg}
+            alt="article soupes"
           />
           <div>
             <p>les soupes</p>
