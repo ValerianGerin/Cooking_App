@@ -14,13 +14,15 @@
 
 .searchContainer{
   position: absolute;
-  top:150px;
+  top: 150px;
+  right: 85%;
   font-size: 0.70em;
   background-color: white;
   opacity: 0.9;
   display: flex;
   flex-wrap: wrap;
-  border: solid black 1px;
+  border: double black 1px;
+  border-radius: 5px 5px;
   padding: 20px;
   max-width: 500px;
   max-height: 500px;
