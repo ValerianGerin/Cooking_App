@@ -10,8 +10,8 @@ const SearchBar = () => {
 
     const fetchRecipes = async () => {
       try {
-        const fetching = await fetch(`${path}search?recipes=${value}`);
-        const response = await fetching.json();
+        const data = await fetch(`${path}search?recipes=${value}`);
+        const response = await data.json();
         setSearch(response);
       } catch (error) {}
     };
