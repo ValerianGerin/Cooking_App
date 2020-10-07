@@ -1,0 +1,46 @@
+.mainContainer{
+  width: 60%;
+  height: 99%;
+  min-height: 500px;
+  position: relative;
+  left: 20%;
+  border: solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+
+.mainInfosRecipeContainer{
+  height: 40%;
+  display: flex;
+  justify-content: space-around;
+  border: solid black;
+
+}
+
+.recipeImg{
+  
+}
+
+.recipeInfos{
+
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4em;
+  font-weight: bold;
+  border: solid black
+}
+
+
+.recipeIngredients{
+border: solid black;
+
+
+
+}
+
+.recipePreparation{
+  border: solid black;
+
+}
