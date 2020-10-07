@@ -22,7 +22,7 @@ const SearchBar = () => {
 
   return (
     <div className={Style.inputContainer}>
-      <input name="searchBar" className={Style.input} onChange={handleSeach} />
+      <input name="searchBar" className={Style.input} onChange={handleSeach} placeholder="que recherchez vous?"/>
       {search && inputSearch.value !== "" && search.length > 0? (
         <div className={Style.searchContainer}>
           {search.map((recipe) => (

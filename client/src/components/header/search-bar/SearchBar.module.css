@@ -15,7 +15,8 @@
 .searchContainer{
   position: absolute;
   top: 150px;
-  right: 85%;
+  right: 70%;
+  left: 2%;
   font-size: 0.70em;
   background-color: white;
   opacity: 0.9;
@@ -23,8 +24,9 @@
   flex-wrap: wrap;
   border: double black 1px;
   border-radius: 5px 5px;
-  padding: 20px;
-  max-width: 500px;
+  padding: 15px;
+  min-width: 200px;
+  max-width: 400px;
   max-height: 500px;
 
 }
@@ -34,7 +36,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 10px;
+  margin: 10px;
   border: outset;
 
 }
