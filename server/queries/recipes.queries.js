@@ -15,20 +15,21 @@ exports.findOneRecipeById = (id) => {
 
 /**
  * Query to create one recipe
- * Have to create a object on the fly because ingredient is embeded in recipe
  * @param {*} body
  */
 exports.createNewRecipe = (body) => {
   
   try {
-    const newRecipe = new recipe();
+    const [...ingredients] = body.ingredients
 
-    newRecipe._id = null;
-    newRecipe.title = body.title;
-    newRecipe.img = body.img;
-    body.ingredients.map((ingredient) => newRecipe.ingredients.push(ingredient));
-    newRecipe.description = body.description;
-    newRecipe.preparation = body.preparation;
+    const newRecipe = new recipe({
+      _id: null,
+      title: body.title,
+      img: body.img,
+      ingredients: ingredients,
+      description: body.description,
+      preparation: body.preparation
+    })
     return newRecipe.save();
 
   } catch (error) {
