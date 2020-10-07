@@ -18,23 +18,40 @@ const RecipeDetail = ({ match }) => {
     fetchRecipeDetail();
   }, []);
 
+  console.log(recipeDetail);
+
   return (
-    <div className={Style.mainContainer}>
-      <div className={Style.mainInfosRecipeContainer}>
-        <div className={Style.recipeImg}>
-          <img />
+    <>
+      {recipeDetail ? (
+        <div className={Style.mainContainer}>
+          <div className={Style.mainInfosRecipeContainer}>
+            <div className={Style.recipeImg}>
+              <img />
+            </div>
+            <div className={Style.recipeInfos}>
+              <span>{recipeDetail.title}</span>
+              <span>{recipeDetail.description}</span>
+            </div>
+          </div>
+          <div className={Style.recipeIngredients}>
+           
+              <ul>
+                {recipeDetail.ingredients.map((ingredient, index) => (
+                  <li key={index}>
+                    <div>{ingredient.name}</div>{" "}
+                    <div>quantité: {ingredient.quantite}</div>
+                  </li>
+                ))}
+              </ul>
+           
+          </div>
+          <div className={Style.recipePreparation}>
+          Conseils de preparation:
+            <div>{recipeDetail.preparation}</div>
+          </div>
         </div>
-        <div className={Style.recipeInfos}>
-          <span>title</span>
-          <span>description</span>
-          <span>crée le</span>
-        </div>
-      </div>
-      <div className={Style.recipeIngredients}>
-        <div>Liste des ingredients</div>
-      </div>
-      <div className={Style.recipePreparation}>conseil de preparation</div>
-    </div>
+      ) : null}
+    </>
   );
 };
 

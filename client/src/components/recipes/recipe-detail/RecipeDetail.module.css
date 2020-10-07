@@ -1,13 +1,15 @@
 .mainContainer{
-  width: 60%;
-  height: 99%;
+  width: 50%;
+  height: 93%;
   min-height: 500px;
   position: relative;
   left: 20%;
-  border: solid;
+  border: outset;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding: 10px;
+  margin: 10px;
   
 }
 
@@ -15,7 +17,7 @@
   height: 40%;
   display: flex;
   justify-content: space-around;
-  border: solid black;
+
 
 }
 
@@ -29,18 +31,30 @@
   flex-direction: column;
   font-size: 1.4em;
   font-weight: bold;
-  border: solid black
+
 }
 
 
 .recipeIngredients{
-border: solid black;
+height: 100%;
+}
 
 
+
+.recipeIngredients li{
+  margin-bottom: 15px;
+  font-size: 1.2em;
 
 }
 
 .recipePreparation{
-  border: solid black;
+  padding: 5px;
+  font-size: 1.2em;
 
+}
+
+.recipePreparation div{
+ border: solid 1px;
+ padding:10px;
+ margin: 10px;
 }
