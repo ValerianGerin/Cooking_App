@@ -1,13 +1,12 @@
 .formMainContainer {
-  font-weight: bold;
   height: 100%;
-  font-size: 1.1em;
-  font-weight: bold;
   background-color: rgb(246, 246, 246);
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;  
 }
 
 .form {
@@ -25,6 +24,7 @@
 }
 
 .formItems {
+  
   height: 100%;
   width: 40%;
   display: flex;
@@ -44,8 +44,8 @@
 
 .textarea {
   padding: 10px;
-  font-weight: 800;
-  font-size: 1em;
+  font-weight: 200;
+  font-size: 1.1em;
   max-width: 100%;
   min-width: 100%;
   max-height: 120px;
@@ -57,10 +57,11 @@
 
 .ingredientContainer {
   width: 40%;
-  display: flex;
   padding: 10px;
-  flex-direction: column;
   margin: 15px;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .ingredientContainer > div {
@@ -96,6 +97,12 @@
   margin: 10px;
   min-width: 150px;
   height: 45px;
+  transition: 0.3s;
+  font-size: 1em;
+}
+
+.buttonForm:hover{
+  background-color: rgb(245, 246, 253) ;
 }
 
 .buttonForm:hover {
