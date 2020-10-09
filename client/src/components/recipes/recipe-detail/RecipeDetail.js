@@ -38,7 +38,7 @@ const RecipeDetail = ({ match }) => {
               <ul>
                 {recipeDetail.ingredients.map((ingredient, index) => (
                   <li key={index}>
-                    <div>{ingredient.name}</div>{" "}
+                    <div>{ingredient.name}</div>
                     <div>quantité: {ingredient.quantite}</div>
                   </li>
                 ))}
