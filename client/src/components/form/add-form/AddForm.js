@@ -129,7 +129,7 @@ const AddForm = () => {
 
         <div className={Style.formItems}>
           <label>Image:</label>
-          <input type="file" name="img" onChange={handleChange} />
+          <input type="file" name="img" onChange={handleChange} className={Style.inputImg} />
         </div>
 
         <div className={Style.formItems}>
