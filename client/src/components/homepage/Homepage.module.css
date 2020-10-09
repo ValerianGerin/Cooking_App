@@ -1,8 +1,7 @@
 .homepageMainContainer {
   height: 100%;
-  background-color: rgb(248, 247, 245);
+  background-color: rgb(247, 248, 255);
 }
-
 
 .imgSlider{
   height: 100%;
@@ -77,11 +76,10 @@
 
 
 .articleImg{
-  border: outset 7px;
-  border-radius: 10px 10px;
+  border: outset 1px;
   width: 80%;
   margin-left: 35px;
-  box-shadow: 4px 4px 5px 3px ;
+  box-shadow: 1px 1px 1px 1px ;
 
 }
 
