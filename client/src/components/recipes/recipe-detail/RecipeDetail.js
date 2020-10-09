@@ -34,7 +34,7 @@ const RecipeDetail = ({ match }) => {
             </div>
           </div>
           <div className={Style.recipeIngredients}>
-           
+           Ingredients:
               <ul>
                 {recipeDetail.ingredients.map((ingredient, index) => (
                   <li key={index}>
