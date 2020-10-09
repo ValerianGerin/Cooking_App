@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 5%
+  padding: 5%;
+  background-color: rgb(248, 247, 245);
 
 }
 

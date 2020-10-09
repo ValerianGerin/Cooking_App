@@ -1,4 +1,4 @@
-.mainContainer{
+.mainContainer {
   width: 50%;
   height: 93%;
   min-height: 500px;
@@ -10,51 +10,40 @@
   justify-content: space-around;
   padding: 10px;
   margin: 10px;
-  
 }
 
-.mainInfosRecipeContainer{
+.mainInfosRecipeContainer {
   height: 40%;
   display: flex;
   justify-content: space-around;
-
-
 }
 
-.recipeImg{
-  
+.recipeImg {
 }
 
-.recipeInfos{
-
+.recipeInfos {
   display: flex;
   flex-direction: column;
   font-size: 1.4em;
   font-weight: bold;
-
 }
 
-
-.recipeIngredients{
-height: 100%;
+.recipeIngredients {
+  height: 100%;
 }
 
-
-
-.recipeIngredients li{
+.recipeIngredients li {
   margin-bottom: 15px;
   font-size: 1.2em;
-
 }
 
-.recipePreparation{
+.recipePreparation {
   padding: 5px;
   font-size: 1.2em;
-
 }
 
-.recipePreparation div{
- border: solid 1px;
- padding:10px;
- margin: 10px;
+.recipePreparation div {
+  border: solid 1px;
+  padding: 10px;
+  margin: 10px;
 }
