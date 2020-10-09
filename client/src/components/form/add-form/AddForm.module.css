@@ -3,14 +3,14 @@
   height: 100%;
   font-size: 1.1em;
   font-weight: bold;
-  background-color: rgb(253, 244, 229);
+  background-color: rgb(248, 247, 245);
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 .form {
-  font-weight: bold;
   margin: 50px;
   background-color: white;
   width: 60%;
@@ -37,7 +37,7 @@
 .input {
   border-radius: 5px 5px;
   height: 30px;
-  font-weight: bold;
+
   padding-left: 10px;
 }
 
@@ -77,7 +77,7 @@
 
 .ingredientQuantityContainer > input {
   width: 70px;
-  font-weight: bold;
+
 }
 
 .buttonContainer {
@@ -109,8 +109,6 @@
 .buttonIngredient {
   margin-top: 15px;
   height: 20px;
-
-  font-weight: bold;
   background-color: white;
   border-radius: 20px 20px;
   border: outset 3px;
