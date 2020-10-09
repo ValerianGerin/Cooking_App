@@ -26,7 +26,6 @@ exports.findOneRecipe = async (req, res) => {
 };
 
 exports.createRecipe = async (req, res) => {
-  console.log(req.body.img)
   try {
     const body = req.body;
     const newRecipe = await createNewRecipe(body);
@@ -42,7 +41,6 @@ exports.createRecipe = async (req, res) => {
 exports.deleteOneRecipe = async (req, res) => {
   try {
     const recipeId = req.params.id;
-    console.log(recipeId)
     const deleteOne = await deleteRecipe(recipeId);
     res.status(200);
     res.end();
