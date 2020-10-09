@@ -3,7 +3,7 @@
   height: 30px;
   font-size: 0.70em;
   font-family: 'Roboto', sans-serif;
-
+  transition: 0.2s;
 }
 
 .input:focus{
