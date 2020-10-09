@@ -22,8 +22,6 @@
   opacity: 0.9;
   display: flex;
   flex-wrap: wrap;
-  border: double black 1px;
-  border-radius: 5px 5px;
   padding: 15px;
   min-width: 200px;
   max-width: 400px;
@@ -37,6 +35,6 @@
   align-items: center;
   justify-content: center;
   margin: 10px;
-  border: outset;
+
 
 }
